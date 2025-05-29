@@ -19,7 +19,7 @@ public class soal1 {
         List<Integer>listTinggiB = Arrays.asList(tinggiB); // ini juga
 
         // menggabung tinggi badan tim A dan tim B
-        List<Integer> listAllTinggi = new ArrayList<>();
+        List<Integer> listAllTinggi = new ArrayList<>(); // buatin tempat untuk masukin semua data tinggi tim A dan tim B
         listAllTinggi.addAll(listTinggiA); // memasukkan data tinggi tim A untuk dijadikan satu
         listAllTinggi.addAll(listTinggiB); // memasukkan data tinggi tim B untuk dijadikan satu
 
@@ -34,25 +34,25 @@ public class soal1 {
 
         // soal b (urutkan berat secara ascend dan descend)
         System.out.println("\nsoal b");
-        List<Integer>listBeratA = Arrays.asList(beratA);
-        List<Integer>listBeratB = Arrays.asList(beratB);
+        List<Integer>listBeratA = Arrays.asList(beratA); // masukin data array berat dari tim A
+        List<Integer>listBeratB = Arrays.asList(beratB); // masukin data array berat dari tim B
 
         // menggabung berat badan tim A dan tim B
-        List<Integer> listAllBerat = new ArrayList<>();
-        listAllTinggi.addAll(listBeratA);
-        listAllTinggi.addAll(listBeratB);
+        List<Integer> listAllBerat = new ArrayList<>(); // bikin tempat untuk gabungin semua berat dari tim A dan tim B
+        listAllTinggi.addAll(listBeratA); // masukin data berat tim A untuk digabungin
+        listAllTinggi.addAll(listBeratB); // masukin data berat tim B untuk digabungin
 
         // diurutkan secara ascend
-        Collections.sort(listAllBerat);
+        Collections.sort(listAllBerat); // mengurutkan berat teringan sampai terberat dari both tim A dan tim B
         System.out.println("Urutan ascending berdasarkan berat badannya adalah: " + listAllTinggi);
 
         // diurutkan secara descending
-        Collections.sort(listAllBerat, Collections.reverseOrder());
+        Collections.sort(listAllBerat, Collections.reverseOrder()); // mengurutkan berat terberat sampai teringan dari both tim A dan tim B
         System.out.println("Urutan descending berdasarkan berat badannya adalah: " + listAllTinggi);
 
 
         // soal c (nilai max dan min dari tinggi badan dan berat badan tim a dan b)
-// Konversi array ke List
+        // Konversi array ke List
         System.out.println("\nsoal c");
         List<Integer> collectionTinggiA = Arrays.asList(tinggiA);
         List<Integer> collectionBeratA = Arrays.asList(beratA);
@@ -86,19 +86,19 @@ public class soal1 {
 
         // soal d (Copy seluruh anggota Tim B ke Tim C yang baru dibentuk)
         System.out.println("\nsoal d");
-        Integer[] tinggiC = new Integer[10];
-        Integer[] beratC = new Integer[10];
+        Integer[] tinggiC = new Integer[10]; // menyiapkan tempat untuk dimasukin tim B
+        Integer[] beratC = new Integer[10]; // ini juga
 
-        List<Integer>listTinggiC = Arrays.asList(tinggiC);
-        List<Integer>listBeratC = Arrays.asList(beratC);
+        List<Integer>listTinggiC = Arrays.asList(tinggiC); // jadikan list biar bisa dimasukin data tim B
+        List<Integer>listBeratC = Arrays.asList(beratC); // ini juga
 
-        Collections.copy(listTinggiC, listTinggiB);
-        Collections.copy(listBeratC, listBeratB);
+        Collections.copy(listTinggiC, listTinggiB); // masukin data tinggi tim B ke tim C
+        Collections.copy(listBeratC, listBeratB); // masukin data berat tim B ke tim C
 
-        System.out.println("Isi tinggi badan tim C yang baru dibentuk adalah: " + listTinggiC);
+        System.out.println("Isi tinggi badan tim C yang baru dibentuk adalah: " + listTinggiC); //  ngeprint data isi tim C
         System.out.println("Isi berat badan tim C yang baru dibentuk adalah: " + listBeratC);
         System.out.println("yang sama seperti isi tim B yaitu:");
-        System.out.println(listTinggiB);
+        System.out.println(listTinggiB); // nunjukin kalau data tim B sama C sama menunjukkan kalau data tim B berhasil dicopy ke tim C
         System.out.println(listBeratB);
     }
 }
