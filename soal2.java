@@ -35,26 +35,27 @@ public class soal2 {
 
         // Cari irisan (intersection) untuk tinggi
         Set<Integer> tinggiSama = new HashSet<>(setTinggiA);
-        tinggiSama.retainAll(setTinggiB);
+        tinggiSama.retainAll(setTinggiB); // menyimpan irisan yang sama antara tinggi tim A dan tim B
 
         // Cari irisan (intersection) untuk berat
         Set<Integer> beratSama = new HashSet<>(setBeratA);
-        beratSama.retainAll(setBeratB);
+        beratSama.retainAll(setBeratB); // menyimpan irisan yang sama antara berat tim A dan tim B
 
         // Hitung jumlah kemunculan tinggi yang sama di kedua tim
         int jumlahTinggiSama = 0;
-        for (Integer tinggi : tinggiSama) {
-            int countA = Collections.frequency(listTinggiA, tinggi);
-            int countB = Collections.frequency(listTinggiB, tinggi);
-            jumlahTinggiSama += Math.min(countA, countB); // Ambil frekuensi minimum
+        for (Integer tinggi : tinggiSama) { // untuk setiap isinya tinggiSama, loop
+            int countA = Collections.frequency(listTinggiA, tinggi); // menghitung berapa data yang sama, misalnya 168 pada A ada 2
+            int countB = Collections.frequency(listTinggiB, tinggi); // menghitung berapa data yang sama, misalnya 168 pada A ada 1
+            jumlahTinggiSama += Math.min(countA, countB); // Ambil frekuensi terkecil, misalnya dua duanya sama sama ada 168 tetapi B hanya punya 1 maka dihitung hanya 1 kesamaan
         }
 
         // Hitung jumlah kemunculan berat yang sama di kedua tim
+        // sama kayak diatas
         int jumlahBeratSama = 0;
         for (Integer berat : beratSama) {
             int countA = Collections.frequency(listBeratA, berat);
             int countB = Collections.frequency(listBeratB, berat);
-            jumlahBeratSama += Math.min(countA, countB); // Ambil frekuensi minimum
+            jumlahBeratSama += Math.min(countA, countB);
         }
 
         // Output hasil
